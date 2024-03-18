@@ -11,5 +11,7 @@ public class ConditionalOperator {
         s = 9 % 2 == 0 ? "짝" : "홀";
 
         System.out.println(s);
+
+        System.out.println(9 % 2 == 0 ? "짝" : "홀");
     }
 }

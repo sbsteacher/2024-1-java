@@ -9,5 +9,4 @@ public class MissionOddEvenResult2 {
         System.out.print(num % 2 == 0 ? "짝" : "홀");
         System.out.println("수입니다.");
     }
-
 }
