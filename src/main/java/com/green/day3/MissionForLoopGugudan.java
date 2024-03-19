@@ -9,6 +9,10 @@ public class MissionForLoopGugudan {
             //System.out.println(dan + " x " + i + " = " + (dan * i));
             System.out.printf("%d x %d = %d\n", dan, i, (dan * i));
         }
+        int num = 1000000;
+        System.out.printf("%,d\n", num);
+        // 1,000,000
+
         /*
         만약 dan = 2
         2 x 1 = 2

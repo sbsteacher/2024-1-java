@@ -8,9 +8,12 @@ public class MissionIf2 {
         System.out.print("당신의 키를 입력해 주세요 >> ");
         int height = scan.nextInt();
 
-        if(height > 161) {
+        final int STAND_HEIGHT = 162;
+        //STAND_HEIGHT = 161;
+
+        if(height > STAND_HEIGHT) {
             System.out.println("당신은 평균보다 큽니다.");
-        } else if(height < 161) {
+        } else if(height < STAND_HEIGHT) {
             System.out.println("당신은 평균보다 작습니다.");
         } else {
             System.out.println("당신은 평균입니다.");

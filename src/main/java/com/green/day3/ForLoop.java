@@ -26,7 +26,7 @@ public class ForLoop {
 
 //        "1.Hello" 6번 출력 with 인덱스값, 1부터 시작
 //        for(int i=5; i<11; i++) {
-//            System.out.println("Hello");
+//            System.out.println("n.Hello");
 //        }
 
         // for문 ()괄호 내용 수정 없이 인덱스값, 1부터 시작
@@ -35,7 +35,7 @@ public class ForLoop {
         }
 
         //100, 99, 98, 97
-        for(int i=100; i >= 97 ; i--) { //4번 반복
+        for(int i=100; i > 96 ; i--) { //4번 반복
             System.out.println("Bye");
         }
     }

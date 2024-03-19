@@ -14,7 +14,7 @@ public class StringEquals {
         System.out.println(s1 == s3);
         System.out.println(s1.equals(s3));
         System.out.println(s3.equals(s1));
-
+        int a = 100;
         String so1 = new String("안녕");
         String so2 = new String("안녕");
         System.out.println(so1);
