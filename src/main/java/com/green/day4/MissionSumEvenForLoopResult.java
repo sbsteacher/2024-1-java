@@ -12,5 +12,11 @@ public class MissionSumEvenForLoopResult {
             }
         }
         System.out.println("evenSum: " + evenSum);
+
+        int evenSum2 = 0;
+        for(int i=2; i<=100; i+=2) {
+            evenSum2 += i;
+        }
+        System.out.println("evenSum2: " + evenSum2);
     }
 }

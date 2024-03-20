@@ -14,6 +14,7 @@ public class VarScope {
             int num2 = 10;
             System.out.println(num2);
         }
+
         if(1 > 0) {
             int num2 = 10; //위 if문에 있는 num2와 같은 이름을 사용할 수 있다.
                            //왜? 스코프(살아있는 범위)가 다르기 때문.
