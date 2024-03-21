@@ -2,6 +2,14 @@ package com.green.day5.ch2;
 
 public class PrintFormat {
     public static void main(String[] args) {
+
+        //%d > 정수 : byte, short, int, long
+        //%s > 문자열 : String, "직접 작성한 값"
+        //%f > 실수 : float, double
+        //%b > 불린 : boolean
+        //%c > 문자 : char
+
+
         char c = 'A';
         int finger = 10;
         //리터럴 정수는 int타입
@@ -16,8 +24,8 @@ public class PrintFormat {
 
         //yyyy-mm-dd
         int year = 2024;
-        int mon = 12;
-        int day = 20;
+        int mon = 2;
+        int day = 2;
         System.out.printf("%4d-%02d-%02d\n", year, mon, day);
 
 

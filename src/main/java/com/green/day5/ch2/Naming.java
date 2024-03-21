@@ -26,6 +26,12 @@ public class Naming {
         //e.g. last, index, of  >>> lastIndexOf
         //     happy, sunday, morning   >>> happySundayMorning
 
+        //6. 케밥 케이스 기법
+        // happy-sunday-mornig
+
+        //7. 스네이크 케이스 기법
+        // happy_sunday_morning
+
         //<클래스 명명규칙>
         //1. 클래스 이름의 첫 글자는 무조건 대문자로 시작!
         //2. 여러 단어로 구성된 이름은 첫 글자를 모두 대문자로 한다. > 파스칼 케이스 기법
