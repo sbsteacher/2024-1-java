@@ -6,8 +6,9 @@ public class PrintFormat {
         //%d > 정수 : byte, short, int, long
         //%s > 문자열 : String, "직접 작성한 값"
         //%f > 실수 : float, double
-        //%b > 불린 : boolean
         //%c > 문자 : char
+
+        //%b > 불린 : boolean
 
 
         char c = 'A';

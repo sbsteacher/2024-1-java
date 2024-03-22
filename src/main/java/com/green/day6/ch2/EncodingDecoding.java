@@ -4,6 +4,7 @@ public class EncodingDecoding {
     public static void main(String[] args) {
         //int 한글 = 1;
         char c = 'B';
+        int i2 = 'B';
         //int i = (int)c;
         int i = c; //자동현변환, 인코딩
 

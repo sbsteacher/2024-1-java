@@ -7,7 +7,7 @@ public class OperatorEx6 {
         //short c = a + b;
         //System.out.println(c);
 
-        int d = 1_000_000;
+        int d = 1_000_000_000;
         System.out.println(d);
 
         long e = 1_000_000 * 1_000_000;

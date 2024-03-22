@@ -22,7 +22,8 @@ public class AssignmentOperator {
         System.out.println("1 - n: " + n);
 
         int m = 1;
-        m += 1;
+        //m += 1;
+        m++;
         m += 2;
         m += 3;
         System.out.println("2 - m: " + m);
