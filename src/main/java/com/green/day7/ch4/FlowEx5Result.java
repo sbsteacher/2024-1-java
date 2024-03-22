@@ -13,19 +13,18 @@ public class FlowEx5Result {
             System.out.println("잘못된 점수입니다.");
         } else {  //0 ~ 100
             char grade = 'D';
-            char symbol = '-';
+            char symbol = '0';
             if(score >= 90) { // 100 ~ 90
                 grade = 'A';
                 if(score >= 97)         { symbol = '+'; }
-                else if(score >= 93)    { symbol = '0'; }
+                else if(score < 93)    { symbol = '-'; }
             } else if(score >= 80) {
                 grade = 'B';
                 if(score >= 87)         { symbol = '+'; }
-                else if(score >= 83)    { symbol = '0'; }
+                else if(score < 83)    { symbol = '-'; }
 
             } else {
                 grade = 'C';
-                symbol = ' ';
             }
             System.out.printf("당신의 학점은 %c%c입니다.\n", grade, symbol);
         }
@@ -42,7 +41,7 @@ public class FlowEx5Result {
                3~6 0
                7~9 +
 
-        나머지는 C학점 오로지 C학점
+        나머지는 C학점 오로지 C0학점
         (출력) 당신의 학점은 ?입니다.
          */
     }
