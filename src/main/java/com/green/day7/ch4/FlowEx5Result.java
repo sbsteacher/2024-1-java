@@ -12,7 +12,7 @@ public class FlowEx5Result {
         if(score < 0 || score > 100) {
             System.out.println("잘못된 점수입니다.");
         } else {  //0 ~ 100
-            char grade = 'D';
+            char grade = 'C';
             char symbol = '0';
             if(score >= 90) { // 100 ~ 90
                 grade = 'A';
@@ -22,9 +22,6 @@ public class FlowEx5Result {
                 grade = 'B';
                 if(score >= 87)         { symbol = '+'; }
                 else if(score < 83)    { symbol = '-'; }
-
-            } else {
-                grade = 'C';
             }
             System.out.printf("당신의 학점은 %c%c입니다.\n", grade, symbol);
         }
