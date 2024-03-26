@@ -9,7 +9,7 @@ public class FlowEx26Result2 {
          */
         int i = 0;
         int sum = 0;
-        while((sum += ++i) < 200) {
+        while((sum += ++i) < 100) {
             System.out.printf("sum: %d, i: %d\n", sum, i);
         }
         System.out.println("----------");

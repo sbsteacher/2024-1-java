@@ -2,13 +2,15 @@ package com.green.day8.ch4;
 
 public class FlowEx18Result {
     public static void main(String[] args) {
-        for(int i=2; i<13; i++) {
-            if(i > 2) {
+        int startDan = 2;
+        for(int i=startDan; i<10; i++) {
+            if(i > startDan) {
                 System.out.println("----");
             }
             for(int z=1; z<10; z++) {
                 System.out.printf("%d x %d = %d\n", i, z, i * z);
             }
+
         }
         /*
         2~9단 구구단 출력

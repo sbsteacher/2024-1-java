@@ -7,7 +7,8 @@ public class FlowEx19Result {
             for(int i2=1; i2<=LAST_NUM; i2++) {
                 for(int i3=1; i3<=LAST_NUM; i3++) {
                     //System.out.printf("%d%d%d\n", i1, i2, i3);
-                    System.out.println(String.valueOf(i1) + i2 + i3);
+                    //System.out.println(String.valueOf(i1) + i2 + i3);
+                    System.out.println("" + i1 + i2 + i3);
                 }
             }
         }

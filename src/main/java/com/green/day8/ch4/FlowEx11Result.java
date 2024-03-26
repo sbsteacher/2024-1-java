@@ -8,7 +8,6 @@ public class FlowEx11Result {
         System.out.print("당신의 주민번호를 입력하세요.(format: ######-#######) >> ");
         String id = scan.nextLine();
         char genderVal = id.charAt(7);
-        String gender = "남";
         String direction = "전";
         switch(genderVal) {
             default:
@@ -18,14 +17,13 @@ public class FlowEx11Result {
                 switch(genderVal) {
                     case '3': direction = "후";
                 }
-                System.out.printf("당신은 2000년 이%s에 출생한 %s자입니다.", direction, gender);
+                System.out.printf("당신은 2000년 이%s에 출생한 남자입니다.", direction);
                 break;
             case '2': case '4':
-                gender = "여";
                 switch(genderVal) {
                     case '4': direction = "후";
                 }
-                System.out.printf("당신은 2000년 이%s에 출생한 %s자입니다.", direction, gender);
+                System.out.printf("당신은 2000년 이%s에 출생한 여자입니다.", direction);
                 break;
         }
 

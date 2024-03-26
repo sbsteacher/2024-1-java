@@ -9,8 +9,8 @@ public class FlowEx17_1Result {
         int star = scan.nextInt();
 
         //for문 2개 + if문
-        for(int i=star; i>0; i--) {
-            for(int z=1; z<=star; z++) {
+        for(int i=star; i>0; i--) {//5, 4, 3
+            for(int z=1; z<=star; z++) { //1, 2, 3, 4, 5
                 System.out.print(z<i ? "_" : "*");
             }
             System.out.println();
