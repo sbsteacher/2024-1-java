@@ -8,8 +8,11 @@ public class ArrayStudy {
         n1 = 11;
         System.out.println(n1);
 
+        //boolean aaa = null;
         int[] numArr = new int[10];
         numArr = new int[11];
+
+        int[] numArr3 = numArr;
         //numArr[10] = 10; //없는방 사용하면 예외발생
         System.out.println("numArr[10]: " + numArr[10]);
         //System.out.println("numArr[11]: " + numArr[11]);
@@ -22,7 +25,7 @@ public class ArrayStudy {
         System.out.println("numArr2[1]: " + numArr2[1]);
         numArr2[1] = 25;
         System.out.println("numArr2[1]: " + numArr2[1]);
-        int[] numArr3 = new int[] { 10, 20, 30 };
+        int[] numArr4 = new int[] { 10, 20, 30 };
 
         String[] strArr = new String[5];
         System.out.println("strArr[0]: " + strArr[0]);

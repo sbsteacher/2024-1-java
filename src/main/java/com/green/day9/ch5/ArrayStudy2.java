@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArrayStudy2 {
     public static void main(String[] args) {
-        int len = 19;
+        int len = 30;
         int[] numArr = new int[len]; //0~99
         System.out.println(numArr.length);
         System.out.println(Arrays.toString(numArr));
