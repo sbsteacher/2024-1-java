@@ -1,4 +1,4 @@
-package com.green.day9.ch5;
+package com.green.day10.ch5;
 
 public class ArrayEx6 {
     public static void main(String[] args) {

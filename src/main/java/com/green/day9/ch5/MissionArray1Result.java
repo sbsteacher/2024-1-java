@@ -9,6 +9,8 @@ public class MissionArray1Result {
             System.out.printf("%d, ", numArr[i]);
         }
         System.out.println();
+
+
         //Q2) for문 활용 오른쪽과 같이 출력  >> 10, 20, 30, 40, 50
         System.out.println("------------ Q2-1");
         for(int i=0; i<numArr.length; i++) {
