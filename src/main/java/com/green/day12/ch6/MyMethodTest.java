@@ -35,13 +35,15 @@ public class MyMethodTest {
 
         int randomValue2 = mm.getRandomValue(10, 20); //10~19
         randomValue2 = mm.getRandomValue(5, 31); //5~30
+
+
     }
 }
 
 //위치파악 > 리턴,void > 메소드명 > 파라미터
 class MyMethod {
 
-
+    int a = 1;
     void printGugudan(int dan) {
         for(int i=1; i<10; i++) {
             System.out.printf("%d x %d = %d\n", dan, i, dan * i);
@@ -49,7 +51,8 @@ class MyMethod {
     }
 
     int getRandomValue(int min, int max) {
-        return (int)(Math.random() * (max - min)) + min;
+        int range = max - min;
+        return (int)(Math.random() * range) + min;
     }
 
     int getRandomValue(int maxNum) {
