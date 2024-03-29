@@ -1,4 +1,7 @@
 package com.green.day11.ch5;
+
+import java.util.Arrays;
+
 //p.217
 public class ArrayEx18 {
     public static void main(String[] args) {
@@ -9,6 +12,12 @@ public class ArrayEx18 {
                , { 40, 40, 40 }
                , { 80, 20, 40 }
        };
+
+       int[] arr0 = score[0];
+       System.out.println("arr0: " + Arrays.toString(arr0));
+       int[] arr1 = score[1];
+       System.out.println("arr1: " + Arrays.toString(arr1));
+
 
        int[] sumArr = new int[score[0].length];
        for(int i=0; i<score.length; i++) {

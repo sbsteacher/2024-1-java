@@ -18,14 +18,14 @@ public class TvTest4 {
 
         //Q3. 0번방 Tv는 채널 11, 1번방 Tv는 채널 12, 2번방 Tv는 채널 13
         int channel = 11;
-        for(int i=0; i< tvArr.length; i++) {
-            Tv tv = tvArr[i];
-            tv.channel = channel++;
-        }
-//        int channel = 11;
-//        for(Tv tv : tvArr) {
+//        for(int i=0; i< tvArr.length; i++) {
+//            Tv tv = tvArr[i];
 //            tv.channel = channel++;
 //        }
+
+        for(Tv tv : tvArr) {
+            tv.channel = channel++;
+        }
 
         for(Tv tv: tvArr) {
             System.out.println(tv.channel);

@@ -4,7 +4,7 @@ public class ObjectStudy1 {
     /*
     OOP (Object-Oriented Programming)
     UI (User Interface), UX (User Experience)
-    EJB Spring
+    EJB, Spring
     Framework, Library
 
     1. Java의 특징
@@ -15,7 +15,7 @@ public class ObjectStudy1 {
     2. 객체지향 컨셉
     - class, prototype
 
-    3. class, 객체, instance 관계
+    3. class, (객체, instance) 관계
 
     4. 객체의 구성요소 (
         멤버 필드 == 속성 == property == 멤버 변수 == 전역 변수

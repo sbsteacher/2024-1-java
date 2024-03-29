@@ -5,6 +5,7 @@ public class ArrayEx12 {
         String[] names = { "Kim", "Park", "Yi" };
         System.out.println(names[1]);
         String tmp = names[1];
+        System.out.println(tmp == names[1]);
         System.out.println("tmp: " + tmp);
         //0번방 값을 "Yu" 변경
         names[0] = "Yu";
