@@ -12,6 +12,7 @@ public class CardTest {
         for(int i=0; i<shapes.length; i++) {
             for(int z=1; z<=13; z++) {
                 Card c = new Card();
+                cards[idx++] = c;
                 c.shape = shapes[i];
                 c.number = switch(z) {
                     case 1 -> "A";
@@ -20,7 +21,7 @@ public class CardTest {
                     case 13 -> "K";
                     default -> String.valueOf(z);
                 };
-                cards[idx++] = c;
+                //cards[idx++] = c;
             }
         }
         System.out.println("------------");
