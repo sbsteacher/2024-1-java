@@ -10,6 +10,7 @@ public class MyMathTest {
         myMath.minus(200, 50); //200 - 50 = 150
         //System.out.println(myMath.minus(200, 50));
 
+        myMath.returnAdd(500, 600);
         System.out.println(myMath.returnAdd(500, 600));
 
         int result = myMath.returnAdd(500, 600);
@@ -24,8 +25,9 @@ class MyMath {
     //리턴타입 메소드명 파라미터(매개변수) > 메소드 선언부
     // { } 부분은 > 메소드 구현부
     void method1() {
-
+        return;
     }
+
 
     int method2() {
         return 10;

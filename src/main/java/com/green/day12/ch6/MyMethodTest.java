@@ -8,11 +8,11 @@ public class MyMethodTest {
         mm.checkOddEven(100); //(콘솔출력)짝수입니다.
         mm.checkOddEven(13); //(콘솔출력)홀수입니다.
 
-        int r = mm.abs(12220);
+        int r = mm.abs(10);
         System.out.println(r); //10
 
         r = mm.abs(-2);
-        System.out.println(r); //8
+        System.out.println(r); //2
 
         int randomValue = mm.getRandomValue(10); //0~9 사이의 랜덤값 리턴
         randomValue = mm.getRandomValue(100); //0~99 사이의 랜덤값 리턴
@@ -35,8 +35,6 @@ public class MyMethodTest {
 
         int randomValue2 = mm.getRandomValue(10, 20); //10~19
         randomValue2 = mm.getRandomValue(5, 31); //5~30
-
-
     }
 }
 

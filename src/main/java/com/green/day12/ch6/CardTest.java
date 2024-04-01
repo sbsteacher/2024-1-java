@@ -6,7 +6,7 @@ public class CardTest {
         System.out.println(Card.height);
 
         Card.width = 110;
-
+        Math.random();
         System.out.println(Card.width);
 
         //Card.kind = "";
