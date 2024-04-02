@@ -23,6 +23,10 @@ class Data1 {
     public Data1() { //기본 생성자(만 컴파일러가 자동으로 추가해준다.(생성자가 하나도 없을 때만))
         System.out.println("Data1 생성자 호출!!");
     }
+
+    public void Data1() {
+
+    }
 }
 
 class Data2 {

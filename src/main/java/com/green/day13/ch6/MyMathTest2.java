@@ -6,6 +6,7 @@ public class MyMathTest2 {
         System.out.println(Math.abs(-10));
 
         long r = MyMath2.add(10, 20);
+        //메소드이름: add, 클래스이름: MyMath2, 리턴타입: long, 파라미터 2개(int, int), 스태틱 메소드
         System.out.println("r: " + r);
 
         MyMath2 myMath2 = new MyMath2();
