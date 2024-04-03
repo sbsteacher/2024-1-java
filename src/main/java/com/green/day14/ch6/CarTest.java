@@ -6,9 +6,11 @@ public class CarTest {
         System.out.printf("c1.color: %s, c1.gearType: %s, c1.door: %d\n"
                 , c1.color, c1.gearType, c1.door);
 
-        Car c2 = new Car("black", "manual", 3);
+        Car c2 = new Car("black222222", "manual", 3);
         System.out.printf("c2.color: %s, c2.gearType: %s, c2.door: %d\n"
                 , c2.color, c2.gearType, c2.door);
+
+        Car ccc = c2;
 
         Car c3 = new Car();
         System.out.printf("c3.color: %s, c3.gearType: %s, c3.door: %d\n"
@@ -17,6 +19,9 @@ public class CarTest {
         Car c4 = new Car(c2);
         System.out.printf("c4.color: %s, c4.gearType: %s, c4.door: %d\n"
                 , c4.color, c4.gearType, c4.door); //black, manual, 3
+
+
+        System.out.println(c2 == c4);
     }
 }
 
