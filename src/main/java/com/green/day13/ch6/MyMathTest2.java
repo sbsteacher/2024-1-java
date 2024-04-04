@@ -19,6 +19,7 @@ public class MyMathTest2 {
 
 class MyMath2 {
     long n1, n2;
+    static long n3, n4;
 
     long add() {
         System.out.println("call add()");

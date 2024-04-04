@@ -19,7 +19,8 @@ class Deck {
 
     void shuffle() {
         for(int i=0; i<cards.length; i++) {
-            int rIdx = (int)(Math.random() * cards.length);
+            int rIdx = (int)(Math.random() * cards.length); //0~51
+            if(i == rIdx) { continue; }
             Card temp = cards[i];
             cards[i] = cards[rIdx];
             cards[rIdx] = temp;

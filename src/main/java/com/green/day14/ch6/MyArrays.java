@@ -2,8 +2,8 @@ package com.green.day14.ch6;
 
 import java.util.Arrays;
 
-class MyArrays {
-    static void printArr(int[] arr) {
+public class MyArrays {
+    public static void printArr(int[] arr) {
         if(arr.length == 0) {
             System.out.println("[]");
             return;
@@ -15,7 +15,7 @@ class MyArrays {
         System.out.println("]");
     }
     //리턴타입, 메소드명, 파라미터
-    static String toString(int[] arr) {
+    public static String toString(int[] arr) {
         if(arr.length == 0) { return "[]"; }
         //String str = "[" + arr[0];
         String str = String.format("[%d", arr[0]);
