@@ -8,10 +8,12 @@ package com.green.day16.ch7;
 public class PolyTest {
     public static void main(String[] args) {
         //1. 부모 타입의 변수는 자식 객체 주소값 담을 수 있다. (자동형변환)
+        Animal ani_0 = new Animal();
         Animal ani_1 = new Dog();
         Animal ani_2 = new BullDog();
         Animal ani_3 = new Cat();
         Dog dog_1 = new BullDog();
+        //Dog dog_2 = (Dog)new Animal();
 
         BullDog bullDog = new BullDog();
         bullDog.sleep();
@@ -20,8 +22,10 @@ public class PolyTest {
         //Dog dog_2 = new Animal(); //컴파일 에러
         //Dog dog_3 = (Dog)new Animal();
         //dog_3.sleep();
+        //Dog dog_6 = (Dog)ani_0;
 
         //3. 타입은 알고 있는 메소드만 호출할 수 있고 실행되는 기준은 객체 기준이다.
+        System.out.println("ani_1.crying()");
         ani_1.crying();
         //ani_1.sleep();
         Dog dog_4 = (Dog)ani_1;
@@ -29,7 +33,7 @@ public class PolyTest {
 
         //ani_2.sleep();
         Dog dog_5 = (Dog)ani_2;
-        dog_5.sleep();
+        dog_5.getup();
         BullDog bullDog1 = (BullDog)ani_2;
         bullDog1.sleep();
 
@@ -39,6 +43,9 @@ public class PolyTest {
 }
 class Animal {
     void crying() { System.out.println("동물이 운다"); }
+    void getup() {
+        System.out.println("동물이 일어났다");
+    }
 }
 
 class Dog extends Animal {

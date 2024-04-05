@@ -72,7 +72,7 @@ class Tv extends Product {
     }
 }
 
-class Product {
+abstract class Product {
     private final int price;
     private final int bonusPoint;
 
