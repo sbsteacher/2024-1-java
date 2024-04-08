@@ -15,8 +15,6 @@ public class If {
             System.out.println("n1이 n2보다 초과값입니다.");
         } else if(n1 > n2) {
             System.out.println("n1이 n2보다 초과값입니다.");
-        } else {
-
         }
         System.out.println("----------------");
 
