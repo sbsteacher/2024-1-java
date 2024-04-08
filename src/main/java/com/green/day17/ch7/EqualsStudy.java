@@ -7,6 +7,7 @@ public class EqualsStudy {
         System.out.println(n1 == n2); // false, false,
         System.out.println(n1.equals(n1)); //true
         System.out.println(n1.equals(n2)); //true
+        System.out.println(n2.equals(n2)); //true
     }
 }
 
