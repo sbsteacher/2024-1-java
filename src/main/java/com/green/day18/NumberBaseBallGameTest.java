@@ -51,11 +51,38 @@ class NumberBaseBallGame {
         while(true) {
             System.out.printf("숫자를 %d개 입력해 주세요. (구분은 스페이스) >>> ", NUMBER_COUNT);
             String strAnswer = scan.nextLine();// 3 7 9
-            String[] answerStrArr = ?;
-            int[] answerArr = ?;
+            String[] answerStrArr = strAnswer.split(" ");
+            int[] answerArr = new int[answerStrArr.length];
+            for(int i=0; i<answerStrArr.length; i++) {
+                answerArr[i] = Integer.parseInt(answerStrArr[i]);
+            }
 
+            if(numArr.length != answerArr.length) {
+                System.out.println("잘못 입력하셨습니다.");
+                continue;
+            }
+
+            int striker = 0, ball = 0;
+            //striker, ball 갯수 찾아내면 된다!!!
+            for(int i=0; i<numArr.length; i++) {
+                for(int z=0; z<answerArr.length; z++) {
+                    if(numArr[i] == answerArr[z]) {
+                        if(i == z) {
+                            striker++;
+                        } else {
+                            ball++;
+                        }
+                    }
+                }
+            }
+            if(striker == NUMBER_COUNT) {
+                System.out.println("정답!!");
+                break;
+            }
+            System.out.printf("S: %d, B: %d, O: %d\n"
+                    , striker, ball, (NUMBER_COUNT - (striker + ball)));
         }
-        //scan.close();
+        scan.close();
     }
 
     void showArr() {
