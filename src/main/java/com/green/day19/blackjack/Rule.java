@@ -5,12 +5,36 @@ import java.util.List;
 public class Rule {
     private final int MAX_POINT = 21;
 
+    public static void main(String[] args) {
+        Gamer gamer = new Gamer();
+        gamer.receiveCard(new Card("", "10"));
+        gamer.receiveCard(new Card("", "5"));
+        gamer.receiveCard(new Card("", "5"));
+
+        Dealer dealer = new Dealer();
+        dealer.receiveCard(new Card("", "10"));
+        dealer.receiveCard(new Card("", "5"));
+
+        Rule rule = new Rule();
+        rule.whoIsWinner(gamer, dealer);
+    }
+
     public void whoIsWinner(Gamer gamer, Dealer dealer) {
         int gamerPoint = getTotalPoint(gamer.openCards());
         int dealerPoint = getTotalPoint(dealer.openCards());
 
         System.out.println("gamer: " + gamer.openCards());
         System.out.println("dealer: " + dealer.openCards());
+        if ((gamerPoint == dealerPoint) || (gamerPoint > MAX_POINT && dealerPoint > MAX_POINT)) {
+            System.out.println("비겼습니다.");
+        } else if (gamerPoint > MAX_POINT || (dealerPoint <= MAX_POINT && dealerPoint > gamerPoint)) {
+            System.out.println("딜러 승");
+        } else {
+            System.out.println("게이머 승");
+        }
+
+        System.out.println("---------------");
+
         if ((gamerPoint == dealerPoint) || (gamerPoint > MAX_POINT && dealerPoint > MAX_POINT)) {
             System.out.println("비겼습니다.");
         } else if(gamerPoint <= MAX_POINT && dealerPoint <= MAX_POINT) {
