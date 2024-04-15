@@ -38,7 +38,81 @@ public class MemberDao {
         return result;
     }
 
+    int updMember(MemberEntity entity) {
+        String mid = "";
+        if(entity.getMemName() != null && entity.getMemName().length() > 0) {
+            mid += String.format(", mem_name = '%s' ", entity.getMemName());
+        }
+        if(entity.getMemNumber() > 0) {
+            mid += String.format(", mem_number = %d ", entity.getMemNumber());
+        }
+        if(entity.getAddr() != null && entity.getAddr().length() > 0) {
+            mid += String.format(", addr = '%s' ", entity.getAddr());
+        }
+        if(entity.getPhone1() != null && entity.getPhone1().length() > 0) {
+            mid += String.format(", phone1 = '%s' ", entity.getPhone1());
+        }
+        if(entity.getPhone2() != null && entity.getPhone2().length() > 0) {
+            mid += String.format(", phone2 = '%s' ", entity.getPhone2());
+        }
+        if(entity.getHeight() > 0) {
+            mid += String.format(", height = %d ", entity.getHeight());
+        }
+        mid = mid.substring(1);
+        System.out.println(mid);
+
+        String sql = String.format("UPDATE member SET %s WHERE mem_id = '%s'", mid, entity.getMemId());
+
+        System.out.println(sql);
+        Connection conn = null;
+        Statement stat = null;
+        int result = 0;
+        try {
+            conn = myConn.getConn();
+            stat = conn.createStatement();
+            result = stat.executeUpdate(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
+            myConn.close(stat, conn);
+        }
+
+        return result;
+    }
+
 }
+class SubStringTest {
+    public static void main(String[] args) {
+        String str = "1234567890";
+        System.out.println(str.substring(3));
+        System.out.println(str.substring(4, 7));
+        System.out.println(str);
+
+
+        String str2 = ", 안녕, 하하, 좋아요";
+        System.out.println(str2.startsWith(","));
+        String str3 = str2.substring(1);
+        System.out.println("str3: " + str3);
+    }
+}
+
+class MemberDaoUpdateTest {
+    public static void main(String[] args) {
+        MemberDao memberDao = new MemberDao();
+
+        MemberEntity member = new MemberEntity();
+        member.setMemId("NJS");
+        member.setMemNumber(6);
+        member.setAddr("제주");
+        member.setPhone1("011");
+
+        int affectdRow = memberDao.updMember(member);
+        System.out.printf("affectedRow: %d\n", affectdRow);
+    }
+}
+
 
 class MemberDAOTest {
     public static void main(String[] args) {
