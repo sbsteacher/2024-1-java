@@ -73,4 +73,18 @@ public class MemberEntity {
     public void setDebutDate(String debutDate) {
         this.debutDate = debutDate;
     }
+
+    @Override
+    public String toString() {
+        return "MemberEntity{" +
+                "memId='" + memId + '\'' +
+                ", memName='" + memName + '\'' +
+                ", memNumber=" + memNumber +
+                ", addr='" + addr + '\'' +
+                ", phone1='" + phone1 + '\'' +
+                ", phone2='" + phone2 + '\'' +
+                ", height=" + height +
+                ", debutDate='" + debutDate + '\'' +
+                '}';
+    }
 }

@@ -1,8 +1,7 @@
 package com.green.day22;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.*;
 
 //Member 테이블용 Data Access Object
 public class MemberDao {
@@ -11,6 +10,8 @@ public class MemberDao {
     public MemberDao() {
         myConn = new MyConnection();
     }
+
+    //Create, insert
     public int insMember(MemberEntity entity) {
         String sql = String.format("INSERT INTO member" +
                 " (mem_id, mem_name, mem_number, addr, phone1, phone2, height, debut_date) " +
@@ -20,25 +21,82 @@ public class MemberDao {
                 , entity.getPhone1(), entity.getPhone2(), entity.getHeight(), entity.getDebutDate()
         );
         System.out.println(sql);
-        Connection conn = null;
-        Statement stat = null;
+
+
         int result = 0;
-        try {
-            conn = myConn.getConn();
-            stat = conn.createStatement();
+        try(Connection conn = myConn.getConn();
+            Statement stat = conn.createStatement()
+        ) {
             result = stat.executeUpdate(sql);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        } finally {
-            myConn.close(stat, conn);
         }
 
         return result;
     }
 
-    int updMember(MemberEntity entity) {
+    public MemberEntity selMember(String memId) {
+        String sql = String.format("SELECT mem_name, mem_number, addr, phone1" +
+                " , phone2, height, debut_date" +
+                " FROM member WHERE mem_id = '%s'", memId);
+
+        String sql2 = "WHERE mem_id = '" + memId + "'";
+        System.out.println(sql);
+        try(Connection conn = myConn.getConn();
+            Statement stat = conn.createStatement();
+            ResultSet rs = stat.executeQuery(sql)) {
+            if(rs.next()) {
+                MemberEntity entity = new MemberEntity();
+                entity.setMemId(memId);
+                entity.setMemName(rs.getString("mem_name"));
+                entity.setMemNumber(rs.getInt("mem_number"));
+                entity.setAddr(rs.getString("addr"));
+                entity.setPhone1(rs.getString("phone1"));
+                entity.setPhone2(rs.getString("phone2"));
+                entity.setHeight(rs.getInt("height"));
+                entity.setDebutDate(rs.getString("debut_date"));
+                return entity;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<MemberEntity> selMemberList() {
+        List<MemberEntity> list = new ArrayList();
+        String sql = "SELECT mem_id, mem_name, debut_date FROM member ORDER BY debut_date DESC";
+        System.out.println(sql);
+        try(Connection conn = myConn.getConn();
+            Statement stat = conn.createStatement();
+            ResultSet rs = stat.executeQuery(sql)) {
+
+            while(rs.next()) {
+                String memId = rs.getString("mem_id");
+                String memName = rs.getString("mem_name");
+                String debutDate = rs.getString("debut_date");
+
+                MemberEntity member = new MemberEntity();
+                list.add(member);
+                member.setMemId(memId);
+                member.setMemName(memName);
+                member.setDebutDate(debutDate);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+    //Update
+    public int updMember(MemberEntity entity) {
         String mid = "";
         if(entity.getMemName() != null && entity.getMemName().length() > 0) {
             mid += String.format(", mem_name = '%s' ", entity.getMemName());
@@ -58,6 +116,7 @@ public class MemberDao {
         if(entity.getHeight() > 0) {
             mid += String.format(", height = %d ", entity.getHeight());
         }
+        System.out.println(mid);
         mid = mid.substring(1);
         System.out.println(mid);
 
@@ -82,7 +141,64 @@ public class MemberDao {
         return result;
     }
 
+    // Delete
+    public int delMember(MemberEntity entity) {
+        String sql = String.format("DELETE FROM member WHERE mem_id = '%s'", entity.getMemId());
+        System.out.println(sql);
+        Connection conn = null;
+        Statement stat = null;
+        int result = 0;
+        try {
+            conn = myConn.getConn();
+            stat = conn.createStatement();
+            result = stat.executeUpdate(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
+            myConn.close(stat, conn);
+        }
+        return result;
+    }
 }
+
+class SelMemberTest {
+    public static void main(String[] args) {
+        MemberDao dao = new MemberDao();
+        MemberEntity entity = dao.selMember("WMN");
+        System.out.println(entity);
+    }
+}
+
+
+class SelListMemberTest {
+    public static void main(String[] args) {
+        MemberDao dao = new MemberDao();
+        List<MemberEntity> list = dao.selMemberList();
+        //System.out.println(list);
+        for(MemberEntity member : list) {
+            System.out.println(member);
+        }
+    }
+}
+
+
+
+
+class DelMemberTest {
+    public static void main(String[] args) {
+        MemberDao dao = new MemberDao();
+
+        MemberEntity member = new MemberEntity();
+        member.setMemId("NJS");
+
+        int affectdRow = dao.delMember(member);
+        System.out.printf("affectedRow: %d\n", affectdRow);
+    }
+}
+
+
 class SubStringTest {
     public static void main(String[] args) {
         String str = "1234567890";
@@ -101,10 +217,9 @@ class SubStringTest {
 class MemberDaoUpdateTest {
     public static void main(String[] args) {
         MemberDao memberDao = new MemberDao();
-
         MemberEntity member = new MemberEntity();
         member.setMemId("NJS");
-        member.setMemNumber(6);
+
         member.setAddr("제주");
         member.setPhone1("011");
 
