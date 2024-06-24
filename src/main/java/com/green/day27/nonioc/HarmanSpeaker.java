@@ -1,6 +1,7 @@
 package com.green.day27.nonioc;
 
 import com.green.day27.HanilWoofer;
+import com.green.day27.MartenWoofer;
 import com.green.day27.Speaker;
 import com.green.day27.Woofer;
 
@@ -10,7 +11,8 @@ public class HarmanSpeaker implements Speaker {
 
     //생성자, 이름은 클래스명과 같아야 한다. 리턴타입이 없어야 한다.
     public HarmanSpeaker() {
-        woofer = new HanilWoofer();
+        //woofer = new HanilWoofer();
+        woofer = new MartenWoofer();
     }
 
     @Override

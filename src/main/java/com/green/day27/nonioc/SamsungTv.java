@@ -8,8 +8,8 @@ public class SamsungTv implements Tv {
     private Speaker speaker;
 
     public SamsungTv() {
-        //this.speaker = new HarmanSpeaker();
-        this.speaker = new JblSpekaer();
+        this.speaker = new HarmanSpeaker();
+        //this.speaker = new JblSpekaer();
     }
 
     @Override

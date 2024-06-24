@@ -19,6 +19,7 @@ public class TvFactory {
         Woofer woofer = switch (wooferName) {
             case "hanil" -> new HanilWoofer();
             case "marten" -> new MartenWoofer();
+
                 default -> null;
         };
         Speaker speaker = switch (speakerName) {
